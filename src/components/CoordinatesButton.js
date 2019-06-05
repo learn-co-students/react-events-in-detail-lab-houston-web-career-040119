@@ -3,17 +3,13 @@ import React from "react"
 
 class CoordinatesButton extends React.Component{
     
-    createArr=()=>{
-        console.log(this.prop)
-    }
-    
-    
-    render(){
-        
-        return(
-            <button onClick={this.createArr}>
-                create an array
-            </button>
-        )
-    }
+  handleClick = event => {
+    this.props.onReceiveCoordinates([event.clientX, event.clientY]);
+  };
+
+  render() {
+    return <button onClick={this.handleClick}>B I G  B U T T O N</button>;
+  }
 }
+
+export default CoordinatesButton
